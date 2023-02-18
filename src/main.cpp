@@ -29,12 +29,16 @@ void u8g2_prepare()
 void drawBme280() {
     float temperatur = bme.readTemperature();
     float luftdruck =  (bme.readPressure() / 100);
+    float luftfeuchtigkeit = bme.readHumidity();
     u8g2.drawStr(0,0, "Temperatur: ");
     u8g2.drawStr(70,0, String(temperatur).c_str());
     u8g2.drawStr(102,0,"C");
     u8g2.drawStr(0,15,"Luftdruck: ");
     u8g2.drawStr(62,15, String(luftdruck).c_str());
     u8g2.drawStr(106,15,"hPa");
+    u8g2.drawStr(0,30,"Höhe m:");
+    u8g2.drawStr(60,30, String(luftfeuchtigkeit).c_str());
+
 }
 
 void setup(void) {
