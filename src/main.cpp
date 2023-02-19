@@ -71,5 +71,5 @@ void loop(void) {
     u8g2.clearBuffer();
     drawBme280();    
     u8g2.sendBuffer();
-    delayMicroseconds=2000;
+    delay(2000);
 }
